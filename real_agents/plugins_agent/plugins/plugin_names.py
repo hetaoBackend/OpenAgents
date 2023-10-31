@@ -23,6 +23,4 @@ class PluginName(str, Enum):
     NBA_STATS = "nba_stats"
     WOLFRAM = "wolfram"
     WEB_SCRAPER = "web_scraper"
-    DREAMINTERPRETER = "DreamInterpreter"
     BIZTOC = "biztoc"
-    XWEATHER = "XWeather"

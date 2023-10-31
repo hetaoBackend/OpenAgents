@@ -61,20 +61,7 @@ class ToolSelector:
         self.tool_list = tools_list
         self.mode = mode
         self.api_key_pool = api_key_pool
-        if mode == "embedding":
-            self._init_embedding(mode_args)
-        else:
-            raise ValueError(f"Unhandled mode '{mode}'.")
 
-    def _init_embedding(self, mode_args: dict):
-        embedding = mode_args.get("embedding", HuggingFaceInstructEmbeddings)
-        if embedding == HuggingFaceInstructEmbeddings:
-            model_name = mode_args.get("model_name", "hkunlp/instructor-large")
-            embed_instruction = mode_args.get("embed_instruction", DEFAULT_TOOL_INSTRUCTION)
-            query_instruction = mode_args.get("query_instruction", DEFAULT_QUERY_INSTRUCTION)
-            self.embedding = HuggingFaceInstructEmbeddings(
-                model_name=model_name, embed_instruction=embed_instruction, query_instruction=query_instruction
-            )
 
     def get_tool_descriptions(self) -> list:
         """

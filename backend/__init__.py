@@ -3,7 +3,6 @@
 
 from backend.api import (
     chat_copilot,
-    chat_plugin,
     chat_webot,
     conversation,
     file,
